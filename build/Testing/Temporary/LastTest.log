@@ -1,0 +1,21 @@
+Start testing: Dec 10 19:42 EST
+----------------------------------------------------------
+1/1 Testing: matrix_test
+1/1 Test: matrix_test
+Command: "/Users/spocam/Documents/GitHub/pnmatrix/build/bin/pnmatrix_test"
+Directory: /Users/spocam/Documents/GitHub/pnmatrix/build/test
+"matrix_test" start time: Dec 10 19:42 EST
+Output:
+----------------------------------------------------------
+===============================================================================
+All tests passed (220 assertions in 30 test cases)
+
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Passed.
+"matrix_test" end time: Dec 10 19:42 EST
+"matrix_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 10 19:42 EST

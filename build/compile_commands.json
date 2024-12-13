@@ -1,0 +1,134 @@
+[
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/gauss_seidel_test.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/gauss_seidel_test.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/gauss_seidel_test.cpp",
+  "output": "test/CMakeFiles/pnmatrix_test.dir/gauss_seidel_test.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/gmres_test.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/gmres_test.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/gmres_test.cpp",
+  "output": "test/CMakeFiles/pnmatrix_test.dir/gmres_test.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/hello_world_test.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/hello_world_test.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/hello_world_test.cpp",
+  "output": "test/CMakeFiles/pnmatrix_test.dir/hello_world_test.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/jacobian_test.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/jacobian_test.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/jacobian_test.cpp",
+  "output": "test/CMakeFiles/pnmatrix_test.dir/jacobian_test.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/matrix_storage_block_test.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/matrix_storage_block_test.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/matrix_storage_block_test.cpp",
+  "output": "test/CMakeFiles/pnmatrix_test.dir/matrix_storage_block_test.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/matrix_storage_cep_test.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/matrix_storage_cep_test.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/matrix_storage_cep_test.cpp",
+  "output": "test/CMakeFiles/pnmatrix_test.dir/matrix_storage_cep_test.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/matrix_test.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/matrix_test.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/matrix_test.cpp",
+  "output": "test/CMakeFiles/pnmatrix_test.dir/matrix_test.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/test_main.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/test_main.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/test_main.cpp",
+  "output": "test/CMakeFiles/pnmatrix_test.dir/test_main.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/test_matrixGenerator.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/test_matrixGenerator.cpp",
+  "output": "test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/test_matrixSolvers.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/test_matrixSolvers.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/test_matrixSolvers.cpp",
+  "output": "test/CMakeFiles/pnmatrix_test.dir/test_matrixSolvers.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/value_compare_test.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/value_compare_test.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/value_compare_test.cpp",
+  "output": "test/CMakeFiles/pnmatrix_test.dir/value_compare_test.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/googletest-build/googlemock",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -I/Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googlemock/include -I/Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googlemock -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=c++11 -arch arm64 -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/googletest-build/googlemock",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googlemock/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googlemock -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=c++11 -arch arm64 -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/googletest-build/googletest",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -I/Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -I/Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=c++11 -arch arm64 -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/src/gtest-all.cc",
+  "output": "googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/googletest-build/googletest",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=c++11 -arch arm64 -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/src/gtest_main.cc",
+  "output": "googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/examples",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_example.dir/IterativeSolvers.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/examples/IterativeSolvers.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/examples/IterativeSolvers.cpp",
+  "output": "examples/CMakeFiles/pnmatrix_example.dir/IterativeSolvers.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/examples",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_example.dir/Matrix.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/examples/Matrix.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/examples/Matrix.cpp",
+  "output": "examples/CMakeFiles/pnmatrix_example.dir/Matrix.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/examples",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_example.dir/examples.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/examples/examples.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/examples/examples.cpp",
+  "output": "examples/CMakeFiles/pnmatrix_example.dir/examples.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/examples",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_example.dir/main.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/examples/main.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/examples/main.cpp",
+  "output": "examples/CMakeFiles/pnmatrix_example.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/examples",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_example.dir/matrixGenerator.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/examples/matrixGenerator.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/examples/matrixGenerator.cpp",
+  "output": "examples/CMakeFiles/pnmatrix_example.dir/matrixGenerator.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/examples",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_example.dir/matrixSolvers.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/examples/matrixSolvers.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/examples/matrixSolvers.cpp",
+  "output": "examples/CMakeFiles/pnmatrix_example.dir/matrixSolvers.cpp.o"
+},
+{
+  "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/examples",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_example.dir/test_matrixSolvers.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/examples/test_matrixSolvers.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/examples/test_matrixSolvers.cpp",
+  "output": "examples/CMakeFiles/pnmatrix_example.dir/test_matrixSolvers.cpp.o"
+}
+]
