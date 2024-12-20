@@ -6,7 +6,7 @@
 using namespace pnmatrix;
 
 TEST_CASE("matrix storage cep set and get value test ","[matrix_container]") {
-  matrix_storage_cep<double> m1(3, 3);
+  sparse_matrix_storage<double> m1(3, 3);
   REQUIRE(m1.get_row() == 3);
   REQUIRE(m1.get_column() == 3);
   REQUIRE(value_equal(m1.get_value(1, 2), 0.0));
@@ -19,7 +19,7 @@ TEST_CASE("matrix storage cep set and get value test ","[matrix_container]") {
 }
 
 TEST_CASE("matrix storage cep copy and move test", "[matrix_container]") {
-  matrix_storage_cep<double> m1(3, 3);
+  sparse_matrix_storage<double> m1(3, 3);
   auto m2 = m1;
   bool e = (m1 == m2);
   REQUIRE(e == true);
@@ -38,7 +38,7 @@ TEST_CASE("matrix storage cep copy and move test", "[matrix_container]") {
 }
 
 TEST_CASE("matrix storage cep delete row and column test","[matrix_container]") {
-  matrix_storage_cep<double> m1(3, 3);
+  sparse_matrix_storage<double> m1(3, 3);
   m1.set_value(1, 1, 2.14);
   m1.set_value(2, 1, 3.3);
   m1.set_value(3, 3, 1.08);
@@ -64,7 +64,7 @@ TEST_CASE("matrix storage cep delete row and column test","[matrix_container]") 
 }
 
 TEST_CASE("matrix storage cep resize test","[matrix_container]") {
-  matrix_storage_cep<double> m1(4, 4);
+  sparse_matrix_storage<double> m1(4, 4);
   m1.set_value(2, 3, 1.4);
   m1.set_value(3, 4, 1.1);
   m1.set_value(4, 4, 0.97);
@@ -94,7 +94,7 @@ TEST_CASE("matrix storage cep resize test","[matrix_container]") {
 }
 
 TEST_CASE("matrix storage cep iterator test", "[matrix_container]") {
-  matrix_storage_cep<double> m1(4, 4);
+  sparse_matrix_storage<double> m1(4, 4);
   std::vector<double> nodes;
   m1.set_value(1, 1, 1.01);
   nodes.push_back(1.01);
@@ -119,7 +119,7 @@ TEST_CASE("matrix storage cep iterator test", "[matrix_container]") {
 }
 
 TEST_CASE("matrix storage cep element row transform test","[matrix_container]") {
-  matrix_storage_cep<double> m1(4, 4);
+  sparse_matrix_storage<double> m1(4, 4);
   m1.set_value(1, 1, 1.02);
   m1.set_value(1, 4, 2.1);
   m1.set_value(2, 3, 3.1);

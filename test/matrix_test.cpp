@@ -8,7 +8,7 @@ using namespace pnmatrix;
 
 TEST_CASE("matrix set and get value test ","[matrix]") {
   SECTION("cep") {
-    matrix<matrix_storage_cep<double>> m1(3, 3);
+    matrix<sparse_matrix_storage<double>> m1(3, 3);
     REQUIRE(value_equal(m1.get_value(1, 1), 0.0));
     m1.set_value(2, 1, 1.05);
     REQUIRE(value_equal(m1.get_value(2, 1), 1.05));
@@ -16,7 +16,7 @@ TEST_CASE("matrix set and get value test ","[matrix]") {
     REQUIRE(value_equal(m1.get_value(2, 1), 1.05 + 1.1));
   }
   SECTION("block") {
-    matrix<matrix_storage_block<double>> m1(3, 3);
+    matrix<dense_matrix_storage<double>> m1(3, 3);
     REQUIRE(value_equal(m1.get_value(1, 1), 0.0));
     m1.set_value(2, 1, 1.05);
     REQUIRE(value_equal(m1.get_value(2, 1), 1.05));
@@ -26,7 +26,7 @@ TEST_CASE("matrix set and get value test ","[matrix]") {
 }
 
 TEST_CASE("matrix iterator test", "[matrix]") {
-  matrix<matrix_storage_cep<double>> m1(4, 4);
+  matrix<sparse_matrix_storage<double>> m1(4, 4);
   std::vector<double> nodes;
   m1.set_value(1, 1, 1.01);
   nodes.push_back(1.01);
@@ -51,7 +51,7 @@ TEST_CASE("matrix iterator test", "[matrix]") {
 }
 
 TEST_CASE("matrix copy and move test", "[matrix]") {
-  matrix<matrix_storage_cep<double>> m1(3, 3);
+  matrix<sparse_matrix_storage<double>> m1(3, 3);
   auto m2 = m1;
   bool e = (m1 == m2);
   REQUIRE(e == true);
@@ -70,7 +70,7 @@ TEST_CASE("matrix copy and move test", "[matrix]") {
 }
 
 TEST_CASE("matrix delete row and column test","[matrix]") {
-  matrix<matrix_storage_cep<double>> m1(3, 3);
+  matrix<sparse_matrix_storage<double>> m1(3, 3);
   m1.set_value(1, 1, 2.14);
   m1.set_value(2, 1, 3.3);
   m1.set_value(3, 3, 1.08);
@@ -96,7 +96,7 @@ TEST_CASE("matrix delete row and column test","[matrix]") {
 }
 
 TEST_CASE("matrix resize test","[matrix]") {
-  matrix<matrix_storage_cep<double>> m1(4, 4);
+  matrix<sparse_matrix_storage<double>> m1(4, 4);
   m1.set_value(2, 3, 1.4);
   m1.set_value(3, 4, 1.1);
   m1.set_value(4, 4, 0.97);
@@ -126,7 +126,7 @@ TEST_CASE("matrix resize test","[matrix]") {
 }
 
 TEST_CASE("matrix operator test","[matrix]") {
-  matrix<matrix_storage_cep<double>> m1(3, 3);
+  matrix<sparse_matrix_storage<double>> m1(3, 3);
   m1.set_value(1, 1, 2.01);
   m1.set_value(1, 2, 4.5);
   m1.set_value(2, 2, 4.1);
@@ -148,7 +148,7 @@ TEST_CASE("matrix operator test","[matrix]") {
   }
 
   SECTION("operator + matrix") {
-    matrix<matrix_storage_cep<double>> m2(3, 3);
+    matrix<sparse_matrix_storage<double>> m2(3, 3);
     m2.set_value(1, 2, 5.5);
     m2.set_value(3, 2, 1.2);
     auto m3 = m1 + m2;
@@ -161,7 +161,7 @@ TEST_CASE("matrix operator test","[matrix]") {
   }
 
   SECTION("operator - matrix") {
-    matrix<matrix_storage_cep<double>> m2(3, 3);
+    matrix<sparse_matrix_storage<double>> m2(3, 3);
     m2.set_value(1, 2, 5.5);
     m2.set_value(3, 2, 1.2);
     auto m3 = m1 - m2;
@@ -174,7 +174,7 @@ TEST_CASE("matrix operator test","[matrix]") {
   }
 
   SECTION("operator * matrix") {
-    matrix<matrix_storage_cep<double>> m2(3, 1);
+    matrix<sparse_matrix_storage<double>> m2(3, 1);
     m2.set_value(2, 1, 0.4);
     auto m3 = m1 * m2;
     REQUIRE(m3.get_row() == 3);
@@ -185,7 +185,7 @@ TEST_CASE("matrix operator test","[matrix]") {
 }
 
 TEST_CASE("matrix get set sub matrix test", "[matrix]") {
-  matrix<matrix_storage_cep<double>> m1(4, 4);
+  matrix<sparse_matrix_storage<double>> m1(4, 4);
   m1.set_value(1, 1, 1.2);
   m1.set_value(2, 2, 3.4);
   m1.set_value(3, 3, 1.56);
@@ -202,7 +202,7 @@ TEST_CASE("matrix get set sub matrix test", "[matrix]") {
   }
 
   SECTION("set sub matrix") {
-    matrix<matrix_storage_cep<double>> m2(3, 3);
+    matrix<sparse_matrix_storage<double>> m2(3, 3);
     m2.set_value(1, 1, 2.1);
     m2.set_value(1, 2, 0.56);
     m1.set_value_from_matrix(2, 2, m2);
@@ -213,20 +213,20 @@ TEST_CASE("matrix get set sub matrix test", "[matrix]") {
 }
 
 TEST_CASE("matrix vector test","[matrix]") {
-  matrix<matrix_storage_cep<double>> m1(3, 1);
+  matrix<sparse_matrix_storage<double>> m1(3, 1);
   m1.set_value(1, 1, 1.4);
   m1.set_value(2, 1, 2.1);
   m1.set_value(3, 1, 4.3);
   double norm = m1.get_vector_second_norm();
   REQUIRE(value_equal(norm * norm, 1.4 * 1.4 + 2.1 * 2.1 + 4.3 * 4.3));
-  matrix<matrix_storage_cep<double>> m2(1, 3);
+  matrix<sparse_matrix_storage<double>> m2(1, 3);
   m2.set_value(1, 1, 1.2);
   m2.set_value(1, 3, 6.5);
   REQUIRE(value_equal(m2.get_vector_inner_product(m1), 1.2 * 1.4 + 4.3 * 6.5));
 }
 
 TEST_CASE("matrix transposition test","[matrix]") {
-  matrix<matrix_storage_cep<double>> m1(3, 2);
+  matrix<sparse_matrix_storage<double>> m1(3, 2);
   m1.set_value(1, 1, 2.3);
   m1.set_value(2, 1, 4.5);
   auto m2 = tr(m1);
@@ -237,9 +237,9 @@ TEST_CASE("matrix transposition test","[matrix]") {
 }
 
 TEST_CASE("matrix every element test","[matrix]") {
-  matrix<matrix_storage_cep<double>> m1(3, 3);
+  matrix<sparse_matrix_storage<double>> m1(3, 3);
   m1.set_value(2, 2, 1.42);
-  using iterator = typename matrix<matrix_storage_cep<double>>::column_iterator;
+  using iterator = typename matrix<sparse_matrix_storage<double>>::column_iterator;
   m1.every_nozero_element([&](iterator it)->void {
     *it += 2;
   });
@@ -248,7 +248,7 @@ TEST_CASE("matrix every element test","[matrix]") {
 }
 
 TEST_CASE("matrix element row transform test","[matrix]") {
-  matrix<matrix_storage_cep<double>> m1(4, 4);
+  matrix<sparse_matrix_storage<double>> m1(4, 4);
   m1.set_value(1, 1, 1.02);
   m1.set_value(1, 4, 2.1);
   m1.set_value(2, 3, 3.1);

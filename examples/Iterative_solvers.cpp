@@ -1,15 +1,15 @@
-#include "IterativeSolvers.h"
+#include "iterative_solvers.h"
 #include <exception>
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <cmath>
 #include "../include/matrix.h"
-#include "../include/matrix_storage_cep.h"
+#include "../include/sparse_matrix_storage.h"
 
 using namespace pnmatrix;
 
-typedef matrix<matrix_storage_cep<double>> Matrix;
+typedef matrix<sparse_matrix_storage<double>> Matrix;
 
 // Helper function to validate matrix dimensions (zero-based indexing)
 void validateMatrixDimensions(const Matrix& A, const Matrix& b) {

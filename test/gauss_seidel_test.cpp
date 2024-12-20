@@ -39,7 +39,7 @@ static MatrixType jacobian_test() {
 }
 
 TEST_CASE( "guass seidel cep test", "[calculate]") {
-  auto x = jacobian_test<matrix<matrix_storage_cep<double>>>();
+  auto x = jacobian_test<matrix<sparse_matrix_storage<double>>>();
   REQUIRE(x.get_row() == 3);
   REQUIRE(x.get_column() == 1);
   REQUIRE(value_equal(x.get_value(1, 1), 3.0));
@@ -50,7 +50,7 @@ TEST_CASE( "guass seidel cep test", "[calculate]") {
 #include "../include/matrix_storage_block.h"
 
 TEST_CASE( "guass seidel block test", "[calculate]") {
-  auto x = jacobian_test<matrix<matrix_storage_block<double>>>();
+  auto x = jacobian_test<matrix<dense_matrix_storage<double>>>();
   REQUIRE(x.get_row() == 3);
   REQUIRE(x.get_column() == 1);
   REQUIRE(value_equal(x.get_value(1, 1), 3.0));

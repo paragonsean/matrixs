@@ -56,6 +56,10 @@
         "ratio": "cpp",
         "stack": "cpp",
         "stdexcept": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "memory": "cpp",
+        "ostream": "cpp",
+        "sstream": "cpp",
+        "algorithm": "cpp"
     }
 }

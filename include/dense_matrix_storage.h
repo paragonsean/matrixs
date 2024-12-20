@@ -15,15 +15,10 @@ namespace pnmatrix {
 template <typename T>
 class logging_allocator;
 
-// Existing dense_container class
-class dense_container {
-public:
-    using dense_tag = void;
-};
 
 // Existing matrix_storage_block class templated on ValueType and Allocator
 template <typename ValueType, typename Allocator = std::allocator<ValueType>>
-class matrix_storage_block : public dense_container {
+class dense_matrix_storage : public dense_container {
 public:
     using value_type = ValueType;
     using allocator_type = Allocator;
@@ -32,22 +27,22 @@ public:
     using allocator_traits = std::allocator_traits<Allocator>;
     using pointer = typename allocator_traits::pointer;
     using const_pointer = typename allocator_traits::const_pointer;
-    using reference = typename allocator_traits::reference;
-    using const_reference = typename allocator_traits::const_reference;
+    using reference = value_type&;
+    using const_reference = const value_type&;
     using difference_type = typename allocator_traits::difference_type;
 
     // Rebind struct (optional in C++11 and later)
     template <typename U>
     struct rebind {
-        using other = matrix_storage_block<U, typename allocator_traits::template rebind_alloc<U>>;
+        using other = dense_matrix_storage<U, typename allocator_traits::template rebind_alloc<U>>;
     };
 
     // Default Constructor
-    matrix_storage_block()
-        : my_row_(0), my_column_(0), block_row_(0), block_column_(0), block_(Allocator()) {}
+    dense_matrix_storage()
+    : my_row_(0), my_column_(0), block_(Allocator()), block_row_(0), block_column_(0) {}
 
     // Constructor with dimensions and optional allocator
-    matrix_storage_block(size_type row, size_type column, const Allocator& alloc = Allocator())
+    dense_matrix_storage(size_type row, size_type column, const Allocator& alloc = Allocator())
         : my_row_(row), my_column_(column), block_row_(row), block_column_(column), block_(alloc)
     {
         assert(row > 0 && column > 0);
@@ -55,7 +50,7 @@ public:
     }
 
     // Copy Constructor
-    matrix_storage_block(const matrix_storage_block& other)
+    dense_matrix_storage(const dense_matrix_storage& other)
         : my_row_(other.my_row_), my_column_(other.my_column_),
           block_row_(other.block_row_), block_column_(other.block_column_),
           block_(allocator_traits::select_on_container_copy_construction(other.block_.get_allocator()))
@@ -69,7 +64,7 @@ public:
     }
 
     // Move Constructor
-    matrix_storage_block(matrix_storage_block&& other) noexcept
+    dense_matrix_storage(dense_matrix_storage&& other) noexcept
         : my_row_(other.my_row_), my_column_(other.my_column_),
           block_row_(other.block_row_), block_column_(other.block_column_),
           block_(std::move(other.block_))
@@ -81,7 +76,7 @@ public:
     }
 
     // Copy Assignment Operator
-    matrix_storage_block& operator=(const matrix_storage_block& other) {
+    dense_matrix_storage& operator=(const dense_matrix_storage& other) {
         if (this != &other) {
             if (allocator_traits::propagate_on_container_copy_assignment::value && 
                 block_.get_allocator() != other.block_.get_allocator()) {
@@ -102,7 +97,7 @@ public:
     }
 
     // Move Assignment Operator
-    matrix_storage_block& operator=(matrix_storage_block&& other) noexcept {
+    dense_matrix_storage& operator=(dense_matrix_storage&& other) noexcept {
         if (this != &other) {
             block_ = std::move(other.block_);
             my_row_ = other.my_row_;
@@ -119,7 +114,7 @@ public:
     }
 
     // Equality operators
-    bool operator==(const matrix_storage_block& other) const {
+    bool operator==(const dense_matrix_storage& other) const {
         if (get_row() != other.get_row() || get_column() != other.get_column()) {
             return false;
         }
@@ -133,7 +128,7 @@ public:
         return true;
     }
 
-    bool operator!=(const matrix_storage_block& other) const {
+    bool operator!=(const dense_matrix_storage& other) const {
         return !(*this == other);
     }
 
@@ -201,7 +196,7 @@ public:
     // Resize the matrix
     void resize(size_type new_row, size_type new_column) {
         assert(new_row > 0 && new_column > 0);
-        matrix_storage_block tmp(new_row, new_column, allocator_traits::select_on_container_copy_construction(block_.get_allocator()));
+        dense_matrix_storage tmp(new_row, new_column, allocator_traits::select_on_container_copy_construction(block_.get_allocator()));
         for (size_type i = 0; i < std::min(my_row_, new_row); ++i) {
             for (size_type j = 0; j < std::min(my_column_, new_column); ++j) {
                 tmp.set_value(i, j, get_value(i, j));
@@ -217,11 +212,11 @@ public:
     // Iterators for rows and columns
     class row_iterator {
     private:
-        matrix_storage_block<ValueType, Allocator>* handle_;
+        dense_matrix_storage<ValueType, Allocator>* handle_;
         size_type row_index_;
 
     public:
-        row_iterator(matrix_storage_block<ValueType, Allocator>* h, size_type r)
+        row_iterator(dense_matrix_storage<ValueType, Allocator>* h, size_type r)
             : handle_(h), row_index_(r) {
         }
 
@@ -250,12 +245,12 @@ public:
 
         class column_iterator {
         private:
-            matrix_storage_block<ValueType, Allocator>* handle_;
+            dense_matrix_storage<ValueType, Allocator>* handle_;
             size_type row_;
             size_type column_;
 
         public:
-            column_iterator(matrix_storage_block<ValueType, Allocator>* h, size_type r, size_type c)
+            column_iterator(dense_matrix_storage<ValueType, Allocator>* h, size_type r, size_type c)
                 : handle_(h), row_(r), column_(c) {
             }
 
@@ -306,11 +301,11 @@ public:
 
     class const_row_iterator {
     private:
-        const matrix_storage_block<ValueType, Allocator>* const handle_;
+        const dense_matrix_storage<ValueType, Allocator>* const handle_;
         size_type row_index_;
 
     public:
-        const_row_iterator(const matrix_storage_block<ValueType, Allocator>* const h, size_type r)
+        const_row_iterator(const dense_matrix_storage<ValueType, Allocator>* const h, size_type r)
             : handle_(h), row_index_(r) {
         }
 
@@ -339,12 +334,12 @@ public:
 
         class const_column_iterator {
         private:
-            const matrix_storage_block<ValueType, Allocator>* handle_;
+            const dense_matrix_storage<ValueType, Allocator>* handle_;
             size_type row_;
             size_type column_;
 
         public:
-            const_column_iterator(const matrix_storage_block<ValueType, Allocator>* h, size_type r, size_type c)
+            const_column_iterator(const dense_matrix_storage<ValueType, Allocator>* h, size_type r, size_type c)
                 : handle_(h), row_(r), column_(c) {
             }
 

@@ -1,8 +1,10 @@
 #include "../include/matrix.h"
-#include "../include/matrix_storage_cep.h"
+#include "../include/sparse_matrix_storage.h"
+#include "../include/dense_matrix_storage.h"
 #include "../include/gmres_solver.h"
 #include "../include/gauss_seidel_solver.h"
 #include "../include/jacobian_solver.h"
+#include "../include/gaussian_elimination.h" // Ensure this file exists at the specified path
 #include <iostream>
 
 using namespace pnmatrix;
@@ -18,9 +20,9 @@ void print_matrix(const MatrixType& m) {
     }
 }
 
+// Example for GMRES method
 void gmres_example() {
-    matrix<matrix_storage_cep<double>> m(3, 3);
-    // Zero-based indexing
+    matrix<sparse_matrix_storage<double>> m(3, 3);
     m.set_value(0, 0, 1);
     m.set_value(0, 1, 1);
     m.set_value(0, 2, 1);
@@ -35,8 +37,7 @@ void gmres_example() {
     std::cout << "Matrix A : \n";
     print_matrix(m);
     
-    matrix<matrix_storage_cep<double>> b(3, 1);
-    // Zero-based indexing
+    matrix<sparse_matrix_storage<double>> b(3, 1);
     b.set_value(0, 0, 6);
     b.set_value(1, 0, 5);
     b.set_value(2, 0, 1);
@@ -46,8 +47,8 @@ void gmres_example() {
     std::cout << "Use GMRES method to solve A * x = b : \n";
     
     gmres::option op;
-    op.m = 3;      // Set m to 3 for a 3x3 matrix
-    op.rm = 1e-5;  // Set rm to 1e-5
+    op.m = 3;      
+    op.rm = 1e-5;  
     std::cout << "Restart m : " << op.m << ", Error tolerance rm : " << op.rm << std::endl;
     
     gmres solver(op);
@@ -58,9 +59,9 @@ void gmres_example() {
     std::cout << "###\n";
 }
 
+// Example for Jacobian method
 void jacobian_example() {
-    matrix<matrix_storage_cep<double>> m(3, 3);
-    // Zero-based indexing
+    matrix<sparse_matrix_storage<double>> m(3, 3);
     m.set_value(0, 0, 8);
     m.set_value(0, 1, -3);
     m.set_value(0, 2, 2);
@@ -75,8 +76,7 @@ void jacobian_example() {
     std::cout << "Matrix A : \n";
     print_matrix(m);
     
-    matrix<matrix_storage_cep<double>> b(3, 1);
-    // Zero-based indexing
+    matrix<sparse_matrix_storage<double>> b(3, 1);
     b.set_value(0, 0, 20);
     b.set_value(1, 0, 33);
     b.set_value(2, 0, 36);
@@ -97,9 +97,9 @@ void jacobian_example() {
     std::cout << "###\n";
 }
 
+// Example for Gauss-Seidel method
 void gauss_seidel_example() {
-    matrix<matrix_storage_cep<double>> m(3, 3);
-    // Zero-based indexing
+    matrix<sparse_matrix_storage<double>> m(3, 3);
     m.set_value(0, 0, 8);
     m.set_value(0, 1, -3);
     m.set_value(0, 2, 2);
@@ -114,8 +114,7 @@ void gauss_seidel_example() {
     std::cout << "Matrix A : \n";
     print_matrix(m);
     
-    matrix<matrix_storage_cep<double>> b(3, 1);
-    // Zero-based indexing
+    matrix<sparse_matrix_storage<double>> b(3, 1);
     b.set_value(0, 0, 20);
     b.set_value(1, 0, 33);
     b.set_value(2, 0, 36);
@@ -136,9 +135,47 @@ void gauss_seidel_example() {
     std::cout << "###\n";
 }
 
+// Example for Gaussian Elimination with only Dense Matrix
+void gaussian_elimination_example() {
+    std::cout << "Example Gaussian Elimination (Dense).\n";
+    
+    matrix<sparse_matrix_storage<double>> m_dense(3, 3);
+    m_dense.set_value(0, 0, 8);
+    m_dense.set_value(0, 1, -3);
+    m_dense.set_value(0, 2, 2);
+    m_dense.set_value(1, 0, 4);
+    m_dense.set_value(1, 1, 11);
+    m_dense.set_value(1, 2, -1);
+    m_dense.set_value(2, 0, 6);
+    m_dense.set_value(2, 1, 3);
+    m_dense.set_value(2, 2, 12);
+    
+    matrix<sparse_matrix_storage<double>> b_dense(3, 1);
+    b_dense.set_value(0, 0, 20);
+    b_dense.set_value(1, 0, 33);
+    b_dense.set_value(2, 0, 36);
+    
+    std::cout << "Dense Matrix A : \n";
+    print_matrix(m_dense);
+    std::cout << "Dense Matrix b : \n";
+    print_matrix(b_dense);
+    
+    gaussian_elimination::option op;
+    op.rm = 1e-6;  // This is not used for Gaussian Elimination but kept for consistency
+    std::cout << "rm : " << op.rm << std::endl;
+    
+    gaussian_elimination solver_dense(op);
+    auto result_dense = solver_dense.solve(m_dense, b_dense);
+    
+    std::cout << "Dense Result : x \n";
+    print_matrix(result_dense);
+    std::cout << "###\n";
+}
+
 int main(int argc, char* argv[]) {
     gmres_example();
     jacobian_example();
     gauss_seidel_example();
+    gaussian_elimination_example();  // Call the new Gaussian Elimination example for dense matrices
     return 0;
 }

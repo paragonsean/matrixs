@@ -15,11 +15,11 @@
 namespace pnmatrix {
 
 template<class ValueType, class Allocator = std::allocator<ValueType>>
-class matrix_storage_cep : public sparse_container {
+class sparse_matrix_storage : public sparse_container {
 public:
     using value_type = ValueType;
     using allocator_type = Allocator;
-    using self = matrix_storage_cep<ValueType, Allocator>;
+    using self = sparse_matrix_storage<ValueType, Allocator>;
 
 private:
     struct node_ {
@@ -41,7 +41,7 @@ private:
     size_type element_count_;
 
 public:
-    matrix_storage_cep(size_type row, size_type column, const Allocator& alloc = Allocator())
+    sparse_matrix_storage(size_type row, size_type column, const Allocator& alloc = Allocator())
         : my_row_(row),
           my_column_(column),
           element_count_(0),
@@ -55,10 +55,12 @@ public:
         // Potentially reserve space for a sparse structure
         container_.reserve(row * column);
     }
+    sparse_matrix_storage()
+    : my_row_(0), my_column_(0), element_count_(0), container_() {}
 
-    ~matrix_storage_cep() = default;
-    matrix_storage_cep(const self&) = default;
-    matrix_storage_cep(self&&) = default;
+    ~sparse_matrix_storage() = default;
+    sparse_matrix_storage(const self&) = default;
+    sparse_matrix_storage(self&&) = default;
     self& operator=(const self&) = default;
     self& operator=(self&&) = default;
 

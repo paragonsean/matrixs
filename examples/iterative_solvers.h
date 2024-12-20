@@ -7,12 +7,12 @@
 #include <cmath>
 
 #include "../include/matrix.h"
-#include "../include/matrix_storage_cep.h"
+#include "../include/sparse_matrix_storage.h"
 #include "../include/gmres_solver.h"
 
 #include "../include/jacobian_solver.h"
 using namespace pnmatrix;
-typedef matrix<matrix_storage_cep<double>> Matrix; // Replace `std::vector<double>` with your actual container type if different
+typedef matrix<sparse_matrix_storage<double>> Matrix; // Replace `std::vector<double>` with your actual container type if different
 
 class IterativeSolvers
 {

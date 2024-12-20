@@ -7,7 +7,7 @@
 #include "../include/matrix_storage_cep.h"
 
 using namespace pnmatrix;
-typedef matrix<matrix_storage_cep<double>> MatrixType;
+typedef matrix<sparse_matrix_storage<double>> MatrixType;
 
 void testGenerateRandomMatrixAndWriteToFile()
 {
