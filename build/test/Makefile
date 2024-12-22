@@ -377,29 +377,29 @@ test_main.cpp.s:
 	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/pnmatrix_test.dir/build.make test/CMakeFiles/pnmatrix_test.dir/test_main.cpp.s
 .PHONY : test_main.cpp.s
 
-test_matrixGenerator.o: test_matrixGenerator.cpp.o
-.PHONY : test_matrixGenerator.o
+test_MatrixFileHandler.o: test_MatrixFileHandler.cpp.o
+.PHONY : test_MatrixFileHandler.o
 
 # target to build an object file
-test_matrixGenerator.cpp.o:
-	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/pnmatrix_test.dir/build.make test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o
-.PHONY : test_matrixGenerator.cpp.o
+test_MatrixFileHandler.cpp.o:
+	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/pnmatrix_test.dir/build.make test/CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.o
+.PHONY : test_MatrixFileHandler.cpp.o
 
-test_matrixGenerator.i: test_matrixGenerator.cpp.i
-.PHONY : test_matrixGenerator.i
+test_MatrixFileHandler.i: test_MatrixFileHandler.cpp.i
+.PHONY : test_MatrixFileHandler.i
 
 # target to preprocess a source file
-test_matrixGenerator.cpp.i:
-	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/pnmatrix_test.dir/build.make test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.i
-.PHONY : test_matrixGenerator.cpp.i
+test_MatrixFileHandler.cpp.i:
+	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/pnmatrix_test.dir/build.make test/CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.i
+.PHONY : test_MatrixFileHandler.cpp.i
 
-test_matrixGenerator.s: test_matrixGenerator.cpp.s
-.PHONY : test_matrixGenerator.s
+test_MatrixFileHandler.s: test_MatrixFileHandler.cpp.s
+.PHONY : test_MatrixFileHandler.s
 
 # target to generate assembly for a file
-test_matrixGenerator.cpp.s:
-	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/pnmatrix_test.dir/build.make test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.s
-.PHONY : test_matrixGenerator.cpp.s
+test_MatrixFileHandler.cpp.s:
+	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/pnmatrix_test.dir/build.make test/CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.s
+.PHONY : test_MatrixFileHandler.cpp.s
 
 test_matrixSolvers.o: test_matrixSolvers.cpp.o
 .PHONY : test_matrixSolvers.o
@@ -487,9 +487,9 @@ help:
 	@echo "... test_main.o"
 	@echo "... test_main.i"
 	@echo "... test_main.s"
-	@echo "... test_matrixGenerator.o"
-	@echo "... test_matrixGenerator.i"
-	@echo "... test_matrixGenerator.s"
+	@echo "... test_MatrixFileHandler.o"
+	@echo "... test_MatrixFileHandler.i"
+	@echo "... test_MatrixFileHandler.s"
 	@echo "... test_matrixSolvers.o"
 	@echo "... test_matrixSolvers.i"
 	@echo "... test_matrixSolvers.s"

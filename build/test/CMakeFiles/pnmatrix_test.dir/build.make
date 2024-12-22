@@ -184,19 +184,19 @@ test/CMakeFiles/pnmatrix_test.dir/test_main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pnmatrix_test.dir/test_main.cpp.s"
 	cd /Users/spocam/Documents/GitHub/pnmatrix/build/test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/spocam/Documents/GitHub/pnmatrix/test/test_main.cpp -o CMakeFiles/pnmatrix_test.dir/test_main.cpp.s
 
-test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o: test/CMakeFiles/pnmatrix_test.dir/flags.make
-test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o: /Users/spocam/Documents/GitHub/pnmatrix/test/test_matrixGenerator.cpp
-test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o: test/CMakeFiles/pnmatrix_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/spocam/Documents/GitHub/pnmatrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o"
-	cd /Users/spocam/Documents/GitHub/pnmatrix/build/test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o -MF CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o.d -o CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/test_matrixGenerator.cpp
+test/CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.o: test/CMakeFiles/pnmatrix_test.dir/flags.make
+test/CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.o: /Users/spocam/Documents/GitHub/pnmatrix/test/test_MatrixFileHandler.cpp
+test/CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.o: test/CMakeFiles/pnmatrix_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/spocam/Documents/GitHub/pnmatrix/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object test/CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.o"
+	cd /Users/spocam/Documents/GitHub/pnmatrix/build/test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.o -MF CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.o.d -o CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/test_MatrixFileHandler.cpp
 
-test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.i"
-	cd /Users/spocam/Documents/GitHub/pnmatrix/build/test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/spocam/Documents/GitHub/pnmatrix/test/test_matrixGenerator.cpp > CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.i
+test/CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.i"
+	cd /Users/spocam/Documents/GitHub/pnmatrix/build/test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/spocam/Documents/GitHub/pnmatrix/test/test_MatrixFileHandler.cpp > CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.i
 
-test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.s"
-	cd /Users/spocam/Documents/GitHub/pnmatrix/build/test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/spocam/Documents/GitHub/pnmatrix/test/test_matrixGenerator.cpp -o CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.s
+test/CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.s"
+	cd /Users/spocam/Documents/GitHub/pnmatrix/build/test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/spocam/Documents/GitHub/pnmatrix/test/test_MatrixFileHandler.cpp -o CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.s
 
 test/CMakeFiles/pnmatrix_test.dir/test_matrixSolvers.cpp.o: test/CMakeFiles/pnmatrix_test.dir/flags.make
 test/CMakeFiles/pnmatrix_test.dir/test_matrixSolvers.cpp.o: /Users/spocam/Documents/GitHub/pnmatrix/test/test_matrixSolvers.cpp
@@ -236,7 +236,7 @@ pnmatrix_test_OBJECTS = \
 "CMakeFiles/pnmatrix_test.dir/matrix_storage_cep_test.cpp.o" \
 "CMakeFiles/pnmatrix_test.dir/matrix_test.cpp.o" \
 "CMakeFiles/pnmatrix_test.dir/test_main.cpp.o" \
-"CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o" \
+"CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.o" \
 "CMakeFiles/pnmatrix_test.dir/test_matrixSolvers.cpp.o" \
 "CMakeFiles/pnmatrix_test.dir/value_compare_test.cpp.o"
 
@@ -251,7 +251,7 @@ bin/pnmatrix_test: test/CMakeFiles/pnmatrix_test.dir/matrix_storage_block_test.c
 bin/pnmatrix_test: test/CMakeFiles/pnmatrix_test.dir/matrix_storage_cep_test.cpp.o
 bin/pnmatrix_test: test/CMakeFiles/pnmatrix_test.dir/matrix_test.cpp.o
 bin/pnmatrix_test: test/CMakeFiles/pnmatrix_test.dir/test_main.cpp.o
-bin/pnmatrix_test: test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o
+bin/pnmatrix_test: test/CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.o
 bin/pnmatrix_test: test/CMakeFiles/pnmatrix_test.dir/test_matrixSolvers.cpp.o
 bin/pnmatrix_test: test/CMakeFiles/pnmatrix_test.dir/value_compare_test.cpp.o
 bin/pnmatrix_test: test/CMakeFiles/pnmatrix_test.dir/build.make

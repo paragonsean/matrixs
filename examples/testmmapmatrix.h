@@ -9,7 +9,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <future>
-#include "matrix_generator.h"
+#include "matrix_file_handler.h"
 #include "gauss_seidel_solver.h"
 #include "thread_pool.h"
 #include "../include/dense_matrix_storage.h"

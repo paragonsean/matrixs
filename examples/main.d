@@ -1,5 +1,5 @@
-main.o: main.cpp matrix_solver.h matrix_generator.h ../include/matrix.h \
-  ../include/type.h ../include/operator_proxy.h \
+main.o: main.cpp matrix_solver.h matrix_file_handler.h \
+  ../include/matrix.h ../include/type.h ../include/operator_proxy.h \
   ../include/value_compare.h ../include/matrix_type_traits.h \
   ../include/dense_matrix_storage.h ../include/sparse_matrix_storage.h \
   ../include/matrix_storage_cep_config.h \

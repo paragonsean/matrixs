@@ -281,29 +281,29 @@ main.cpp.s:
 	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/pnmatrix_example.dir/build.make examples/CMakeFiles/pnmatrix_example.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-matrixGenerator.o: matrixGenerator.cpp.o
-.PHONY : matrixGenerator.o
+MatrixFileHandler.o: MatrixFileHandler.cpp.o
+.PHONY : MatrixFileHandler.o
 
 # target to build an object file
-matrixGenerator.cpp.o:
-	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/pnmatrix_example.dir/build.make examples/CMakeFiles/pnmatrix_example.dir/matrixGenerator.cpp.o
-.PHONY : matrixGenerator.cpp.o
+MatrixFileHandler.cpp.o:
+	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/pnmatrix_example.dir/build.make examples/CMakeFiles/pnmatrix_example.dir/MatrixFileHandler.cpp.o
+.PHONY : MatrixFileHandler.cpp.o
 
-matrixGenerator.i: matrixGenerator.cpp.i
-.PHONY : matrixGenerator.i
+MatrixFileHandler.i: MatrixFileHandler.cpp.i
+.PHONY : MatrixFileHandler.i
 
 # target to preprocess a source file
-matrixGenerator.cpp.i:
-	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/pnmatrix_example.dir/build.make examples/CMakeFiles/pnmatrix_example.dir/matrixGenerator.cpp.i
-.PHONY : matrixGenerator.cpp.i
+MatrixFileHandler.cpp.i:
+	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/pnmatrix_example.dir/build.make examples/CMakeFiles/pnmatrix_example.dir/MatrixFileHandler.cpp.i
+.PHONY : MatrixFileHandler.cpp.i
 
-matrixGenerator.s: matrixGenerator.cpp.s
-.PHONY : matrixGenerator.s
+MatrixFileHandler.s: MatrixFileHandler.cpp.s
+.PHONY : MatrixFileHandler.s
 
 # target to generate assembly for a file
-matrixGenerator.cpp.s:
-	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/pnmatrix_example.dir/build.make examples/CMakeFiles/pnmatrix_example.dir/matrixGenerator.cpp.s
-.PHONY : matrixGenerator.cpp.s
+MatrixFileHandler.cpp.s:
+	cd /Users/spocam/Documents/GitHub/pnmatrix/build && $(MAKE) $(MAKESILENT) -f examples/CMakeFiles/pnmatrix_example.dir/build.make examples/CMakeFiles/pnmatrix_example.dir/MatrixFileHandler.cpp.s
+.PHONY : MatrixFileHandler.cpp.s
 
 matrixSolvers.o: matrixSolvers.cpp.o
 .PHONY : matrixSolvers.o
@@ -379,9 +379,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... matrixGenerator.o"
-	@echo "... matrixGenerator.i"
-	@echo "... matrixGenerator.s"
+	@echo "... MatrixFileHandler.o"
+	@echo "... MatrixFileHandler.i"
+	@echo "... MatrixFileHandler.s"
 	@echo "... matrixSolvers.o"
 	@echo "... matrixSolvers.i"
 	@echo "... matrixSolvers.s"

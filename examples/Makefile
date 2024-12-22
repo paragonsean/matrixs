@@ -18,7 +18,7 @@ $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS) $(LDFLAGS)
 
 # Compiling main.cpp, includes template headers directly
-main.o: main.cpp matrix_generator.h matrix_solvers.h
+main.o: main.cpp matrix_file_handler.h matrix_solvers.h
 	@echo "Compiling main.cpp..."
 	$(CXX) $(CXXFLAGS) -MMD -c main.cpp -o main.o
 

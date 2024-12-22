@@ -1,4 +1,4 @@
-#include "matrixGenerator.h"
+#include "MatrixFileHandler.h"
 #include <iostream>
 #include <fstream>
 #include <cassert>
@@ -11,7 +11,7 @@ typedef matrix<sparse_matrix_storage<double>> MatrixType;
 
 void testGenerateRandomMatrixAndWriteToFile()
 {
-    MatrixGenerator generator;
+    MatrixFileHandler generator;
     std::string filename = "test_matrix.txt";
 
     // Redirect std::cin to simulate user input
@@ -31,7 +31,7 @@ void testGenerateRandomMatrixAndWriteToFile()
 
 void testReadMatrixFromFile()
 {
-    MatrixGenerator generator;
+    MatrixFileHandler generator;
     std::string filename = "test_matrix.txt";
 
     // Create a test matrix and write to file
@@ -68,7 +68,7 @@ void testReadMatrixFromFile()
 
 void testWriteOutSolution()
 {
-    MatrixGenerator generator;
+    MatrixFileHandler generator;
     std::string filename = "test_solution.txt";
 
     // Create a test solution vector
@@ -99,7 +99,7 @@ void testWriteOutSolution()
 
 void testWriteMatrixToFile()
 {
-    MatrixGenerator generator;
+    MatrixFileHandler generator;
     std::string filename = "test_matrix_only.txt";
 
     // Create a test matrix
@@ -148,7 +148,7 @@ void testWriteMatrixToFile()
 
 void testPrintMatrix()
 {
-    MatrixGenerator generator;
+    MatrixFileHandler generator;
 
     // Create a test matrix
     MatrixType A(3, 3);

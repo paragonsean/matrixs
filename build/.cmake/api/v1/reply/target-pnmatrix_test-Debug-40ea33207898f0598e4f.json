@@ -225,7 +225,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "test/test_matrixGenerator.cpp",
+			"path" : "test/test_MatrixFileHandler.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

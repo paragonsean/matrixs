@@ -2,7 +2,7 @@
 #include <fstream>  // For file handling
 
 int main() {
-    const std::string filename = "matdatas.txt";
+    const std::string filename = "matdatat.txt";
     bool printSolution = false;
     int solverChoice = 0;
 
@@ -25,7 +25,7 @@ int main() {
 
     // Set matrix sizes for the test
     std::vector<int> matrixSizes = {500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000,20000,30000,40000};
-
+    
     // Loop through each matrix size and perform tests
     for (int matrixSize : matrixSizes) {
         double total_time = 0.0;

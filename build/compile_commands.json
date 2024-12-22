@@ -49,9 +49,9 @@
 },
 {
   "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
-  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/test_matrixGenerator.cpp",
-  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/test_matrixGenerator.cpp",
-  "output": "test/CMakeFiles/pnmatrix_test.dir/test_matrixGenerator.cpp.o"
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest/include -isystem /Users/spocam/Documents/GitHub/pnmatrix/build/googletest-src/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/test/test_MatrixFileHandler.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/test/test_MatrixFileHandler.cpp",
+  "output": "test/CMakeFiles/pnmatrix_test.dir/test_MatrixFileHandler.cpp.o"
 },
 {
   "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/test",
@@ -115,9 +115,9 @@
 },
 {
   "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/examples",
-  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_example.dir/matrixGenerator.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/examples/matrixGenerator.cpp",
-  "file": "/Users/spocam/Documents/GitHub/pnmatrix/examples/matrixGenerator.cpp",
-  "output": "examples/CMakeFiles/pnmatrix_example.dir/matrixGenerator.cpp.o"
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/spocam/Documents/GitHub/pnmatrix/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/pnmatrix_example.dir/MatrixFileHandler.cpp.o -c /Users/spocam/Documents/GitHub/pnmatrix/examples/MatrixFileHandler.cpp",
+  "file": "/Users/spocam/Documents/GitHub/pnmatrix/examples/MatrixFileHandler.cpp",
+  "output": "examples/CMakeFiles/pnmatrix_example.dir/MatrixFileHandler.cpp.o"
 },
 {
   "directory": "/Users/spocam/Documents/GitHub/pnmatrix/build/examples",

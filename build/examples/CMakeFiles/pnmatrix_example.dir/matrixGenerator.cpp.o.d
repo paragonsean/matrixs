@@ -1,6 +1,6 @@
-examples/CMakeFiles/pnmatrix_example.dir/matrixGenerator.cpp.o: \
-  /Users/spocam/Documents/GitHub/pnmatrix/examples/matrixGenerator.cpp \
-  /Users/spocam/Documents/GitHub/pnmatrix/examples/matrixGenerator.h \
+examples/CMakeFiles/pnmatrix_example.dir/MatrixFileHandler.cpp.o: \
+  /Users/spocam/Documents/GitHub/pnmatrix/examples/MatrixFileHandler.cpp \
+  /Users/spocam/Documents/GitHub/pnmatrix/examples/MatrixFileHandler.h \
   /Users/spocam/Documents/GitHub/pnmatrix/examples/../include/matrix.h \
   /Users/spocam/Documents/GitHub/pnmatrix/examples/../include/type.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk/usr/include/c++/v1/cstdint \

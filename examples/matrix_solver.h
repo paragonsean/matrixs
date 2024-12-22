@@ -10,7 +10,10 @@
 #include <condition_variable>
 #include <future>
 #include <random>
-#include "matrix_generator.h"
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include "matrix_file_handler.h" // Updated to MatrixFileHandler
 #include "gauss_seidel_solver.h"
 #include "../include/dense_matrix_storage.h"
 #include "../include/sparse_matrix_storage.h"
@@ -19,6 +22,7 @@
 
 namespace pnmatrix {
 
+// ThreadPool class remains unchanged
 class ThreadPool {
 public:
     explicit ThreadPool(size_t numThreads) {
@@ -97,7 +101,7 @@ void print_matrix(const MatrixType& m) {
 
 // Optimized multi-threaded row generator for DenseMatrix
 inline void generateRows(DenseMatrix& A, const DenseMatrix& x, DenseMatrix& b,
-                  int startRow, int endRow, std::mt19937& gen, std::normal_distribution<double>& ndist) {
+                        int startRow, int endRow, std::mt19937& gen, std::normal_distribution<double>& ndist) {
     int n = static_cast<int>(A.get_row());
 
     for (int i = startRow; i < endRow; ++i) {
@@ -126,24 +130,6 @@ void initializeVector(DenseMatrix& x, int n) {
     x.set_column(0, mat);
 }
 
-// Function to write matrices to file
-void writeMatricesToFile(const DenseMatrix& A, const DenseMatrix& b, const std::string& filename) {
-    std::ofstream fout(filename);
-    if (!fout) {
-        std::cerr << "Error opening file " << filename << " for writing.\n";
-        return;
-    }
-
-    fout << A.get_row() << " " << A.get_column() << "\n";
-    for (int i = 0; i < A.get_row(); ++i) {
-        for (int j = 0; j < A.get_column(); ++j) {
-            fout << A.get_value(i, j) << " ";
-        }
-        fout << b.get_value(i, 0) << "\n";
-    }
-    fout.close();
-}
-
 // Optimized function to generate random matrix
 void generateRandomMatrix(DenseMatrix& A, DenseMatrix& x, DenseMatrix& b, int n, std::random_device& rd) {
     initializeVector(x, n);
@@ -155,61 +141,78 @@ void generateRandomMatrix(DenseMatrix& A, DenseMatrix& x, DenseMatrix& b, int n,
     int remainder = n % numThreads;
 
     std::vector<std::future<void>> futures;
-    std::mt19937 gen(rd());
+
+    // Create separate random generators for each thread to avoid contention
+    std::vector<std::mt19937> generators;
+    generators.reserve(numThreads);
+    for (unsigned t = 0; t < numThreads; ++t) {
+        generators.emplace_back(rd());
+    }
+
     std::normal_distribution<double> ndist(0.0, 50.0);
 
     for (unsigned t = 0; t < numThreads; ++t) {
         int startRow = t * rowsPerThread + std::min(static_cast<int>(t), remainder);
         int endRow = startRow + rowsPerThread + (t < remainder ? 1 : 0);
-        futures.emplace_back(pool.enqueue(generateRows, std::ref(A), std::ref(x), std::ref(b), startRow, endRow, std::ref(gen), std::ref(ndist)));
+
+        // Capture by reference except for generator and distribution
+        futures.emplace_back(pool.enqueue(generateRows, std::ref(A), std::ref(x), std::ref(b),
+                                        startRow, endRow, std::ref(generators[t]), std::ref(ndist)));
     }
 
     for (auto& fut : futures) {
         fut.get();
     }
 }
-// Unified function to generate and write random matrix
-void generateAndWriteMatrixUnified(DenseMatrix& A, DenseMatrix& x, DenseMatrix& b, const std::string& filename, int n) {
-    std::random_device rd;
-    generateRandomMatrix(A, x, b, n, rd);
-    writeMatricesToFile(A, b, filename);
-}
 
-
-// Random matrix generator for DenseMatrix
-void generateRandomMatrixAndWriteToFile(const std::string& filename, int n) {
+// Random matrix generator for DenseMatrix with optimized file writing
+void generateRandomMatrixAndWriteToFile(const std::string& filename, int n, double& writeTime) {
     auto start = std::chrono::high_resolution_clock::now();
 
     DenseMatrix A(n, n);
     DenseMatrix x(n, 1);
     DenseMatrix b(n, 1);
 
-    generateAndWriteMatrixUnified(A, x, b, filename, n);
+    std::random_device rd;
+    generateRandomMatrix(A, x, b, n, rd);
 
     auto end = std::chrono::high_resolution_clock::now();
-    std::cout << "Matrix and vector b written to " << filename << " in "
+    std::cout << "Matrix A, vector x, and vector b generated in "
               << std::chrono::duration<double>(end - start).count() << " seconds.\n";
+
+    auto writeStart = std::chrono::high_resolution_clock::now();
+    MatrixFileHandler fileHandler;
+    fileHandler.writeBinaryAB(A, b, filename);
+
+    auto writeEnd = std::chrono::high_resolution_clock::now();
+    std::cout << "Matrix A and vector b written to " << filename << " in "
+              << std::chrono::duration<double>(writeEnd - writeStart).count() << " seconds.\n";
+
+    writeTime += std::chrono::duration<double>(writeEnd - start).count();
 }
 
-// Test matrix generation and solving system Ax = b
+// Test matrix generation and solving system Ax = b using Gauss-Seidel
 template <typename MatrixType>
 void testMatrixGenerationAndSolve(const std::string& filename, const std::string& matrixType, bool printSolution, int size) {
     try {
         MatrixType A, b;
-        MatrixGenerator generator;
+        MatrixFileHandler fileHandler;
 
         auto totalStart = std::chrono::high_resolution_clock::now();
 
-        std::cout << "\n--- " << matrixType << " Matrix Test ---\n";
+        std::cout << "\n--- " << matrixType << " Matrix Gauss-Seidel Solver Test ---\n";
 
+        double writeTime = 0.0;
         auto genStart = std::chrono::high_resolution_clock::now();
-        generateRandomMatrixAndWriteToFile(filename, size);
+        // Generate and write matrices A and b
+        generateRandomMatrixAndWriteToFile(filename, size, writeTime);
         auto genEnd = std::chrono::high_resolution_clock::now();
-        std::cout << matrixType << " Matrix Generation Time: "
+        std::cout << matrixType << " Matrix Generation and Writing Time: "
                   << std::chrono::duration<double>(genEnd - genStart).count() << " seconds.\n";
+        std::cout << "File Writing Time: " << (std::chrono::duration<double>(genEnd - genStart).count()) << " seconds.\n";
 
         auto loadStart = std::chrono::high_resolution_clock::now();
-        generator.loadDefaultAB(A, b, filename);
+        fileHandler.loadBinaryAB(A, b, filename);
         auto loadEnd = std::chrono::high_resolution_clock::now();
         std::cout << "Matrix Load Time: "
                   << std::chrono::duration<double>(loadEnd - loadStart).count() << " seconds.\n";
@@ -221,11 +224,11 @@ void testMatrixGenerationAndSolve(const std::string& filename, const std::string
         auto solveStart = std::chrono::high_resolution_clock::now();
         auto result = solver.solve(A, b);
         auto solveEnd = std::chrono::high_resolution_clock::now();
-        std::cout << "Solver Execution Time: "
+        std::cout << "Gauss-Seidel Solver Execution Time: "
                   << std::chrono::duration<double>(solveEnd - solveStart).count() << " seconds.\n";
 
         auto totalEnd = std::chrono::high_resolution_clock::now();
-        std::cout << "Total Time for " << matrixType << " Matrix: "
+        std::cout << "Total Time for " << matrixType << " Matrix Gauss-Seidel Test: "
                   << std::chrono::duration<double>(totalEnd - totalStart).count() << " seconds.\n";
 
         if (printSolution) {
@@ -237,25 +240,28 @@ void testMatrixGenerationAndSolve(const std::string& filename, const std::string
     }
 }
 
-// Function to test Gaussian Elimination
+// Test Gaussian Elimination with memory-mapped binary I/O
 template <typename MatrixType>
 void testGaussianElimination(const std::string& filename, const std::string& matrixType, bool printSolution, int size) {
     try {
         MatrixType A, b;
-        MatrixGenerator generator;
+        MatrixFileHandler fileHandler;
 
         auto totalStart = std::chrono::high_resolution_clock::now();
 
         std::cout << "\n--- " << matrixType << " Matrix Gaussian Elimination Test ---\n";
 
+        double writeTime = 0.0;
         auto genStart = std::chrono::high_resolution_clock::now();
-        generateRandomMatrixAndWriteToFile(filename, size);
+        // Generate and write matrices A and b
+        generateRandomMatrixAndWriteToFile(filename, size, writeTime);
         auto genEnd = std::chrono::high_resolution_clock::now();
-        std::cout << matrixType << " Matrix Generation Time: "
+        std::cout << matrixType << " Matrix Generation and Writing Time: "
                   << std::chrono::duration<double>(genEnd - genStart).count() << " seconds.\n";
+        std::cout << "File Writing Time: " << (std::chrono::duration<double>(genEnd - genStart).count()) << " seconds.\n";
 
         auto loadStart = std::chrono::high_resolution_clock::now();
-        generator.loadDefaultAB(A, b, filename);
+        fileHandler.loadBinaryAB(A, b, filename);
         auto loadEnd = std::chrono::high_resolution_clock::now();
         std::cout << "Matrix Load Time: "
                   << std::chrono::duration<double>(loadEnd - loadStart).count() << " seconds.\n";
@@ -267,11 +273,11 @@ void testGaussianElimination(const std::string& filename, const std::string& mat
         auto solveStart = std::chrono::high_resolution_clock::now();
         auto result = solver.solve(A, b);
         auto solveEnd = std::chrono::high_resolution_clock::now();
-        std::cout << "Solver Execution Time: "
+        std::cout << "Gaussian Elimination Solver Execution Time: "
                   << std::chrono::duration<double>(solveEnd - solveStart).count() << " seconds.\n";
 
         auto totalEnd = std::chrono::high_resolution_clock::now();
-        std::cout << "Total Time for " << matrixType << " Matrix (Gaussian Elimination): "
+        std::cout << "Total Time for " << matrixType << " Matrix Gaussian Elimination Test: "
                   << std::chrono::duration<double>(totalEnd - totalStart).count() << " seconds.\n";
 
         if (printSolution) {

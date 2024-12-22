@@ -1,0 +1,141 @@
+
+Running tests for matrix size 500 x 500...
+Run 1 time: 0.0294657 seconds
+Run 2 time: 0.0107842 seconds
+Run 3 time: 0.00914296 seconds
+Run 4 time: 0.0084745 seconds
+Run 5 time: 0.00849271 seconds
+
+Average time for 30 runs with matrix size 500 x 500: 0.002212 seconds
+
+Running tests for matrix size 1000 x 1000...
+Run 1 time: 0.0289307 seconds
+Run 2 time: 0.0283366 seconds
+Run 3 time: 0.0280462 seconds
+Run 4 time: 0.0283466 seconds
+Run 5 time: 0.027828 seconds
+
+Average time for 30 runs with matrix size 1000 x 1000: 0.00471627 seconds
+
+Running tests for matrix size 1500 x 1500...
+Run 1 time: 0.0641356 seconds
+Run 2 time: 0.0636228 seconds
+Run 3 time: 0.0629754 seconds
+Run 4 time: 0.0651725 seconds
+Run 5 time: 0.0641957 seconds
+
+Average time for 30 runs with matrix size 1500 x 1500: 0.0106701 seconds
+
+Running tests for matrix size 2000 x 2000...
+Run 1 time: 0.11573 seconds
+Run 2 time: 0.109667 seconds
+Run 3 time: 0.11227 seconds
+Run 4 time: 0.114338 seconds
+Run 5 time: 0.115531 seconds
+
+Average time for 30 runs with matrix size 2000 x 2000: 0.0189179 seconds
+
+Running tests for matrix size 2500 x 2500...
+Run 1 time: 0.181534 seconds
+Run 2 time: 0.18244 seconds
+Run 3 time: 0.190649 seconds
+Run 4 time: 0.185977 seconds
+Run 5 time: 0.186563 seconds
+
+Average time for 30 runs with matrix size 2500 x 2500: 0.0309054 seconds
+
+Running tests for matrix size 3000 x 3000...
+Run 1 time: 0.247829 seconds
+Run 2 time: 0.261804 seconds
+Run 3 time: 0.261905 seconds
+Run 4 time: 0.254635 seconds
+Run 5 time: 0.262172 seconds
+
+Average time for 30 runs with matrix size 3000 x 3000: 0.0429448 seconds
+
+Running tests for matrix size 3500 x 3500...
+Run 1 time: 0.344118 seconds
+Run 2 time: 0.386402 seconds
+Run 3 time: 0.334444 seconds
+Run 4 time: 0.331137 seconds
+Run 5 time: 0.329024 seconds
+
+Average time for 30 runs with matrix size 3500 x 3500: 0.0575042 seconds
+
+Running tests for matrix size 4000 x 4000...
+Run 1 time: 0.449352 seconds
+Run 2 time: 0.448782 seconds
+Run 3 time: 0.455705 seconds
+Run 4 time: 0.455926 seconds
+Run 5 time: 0.444883 seconds
+
+Average time for 30 runs with matrix size 4000 x 4000: 0.0751549 seconds
+
+Running tests for matrix size 4500 x 4500...
+Run 1 time: 0.580135 seconds
+Run 2 time: 0.587765 seconds
+Run 3 time: 0.583463 seconds
+Run 4 time: 0.58601 seconds
+Run 5 time: 0.57931 seconds
+
+Average time for 30 runs with matrix size 4500 x 4500: 0.0972227 seconds
+
+Running tests for matrix size 5000 x 5000...
+Run 1 time: 0.74863 seconds
+Run 2 time: 0.742685 seconds
+Run 3 time: 0.745746 seconds
+Run 4 time: 0.7365 seconds
+Run 5 time: 0.745554 seconds
+
+Average time for 30 runs with matrix size 5000 x 5000: 0.12397 seconds
+
+Running tests for matrix size 5500 x 5500...
+Run 1 time: 0.900478 seconds
+Run 2 time: 0.897424 seconds
+Run 3 time: 0.891889 seconds
+Run 4 time: 0.880609 seconds
+Run 5 time: 0.866385 seconds
+
+Average time for 30 runs with matrix size 5500 x 5500: 0.147893 seconds
+
+Running tests for matrix size 6000 x 6000...
+Run 1 time: 1.07676 seconds
+Run 2 time: 1.06571 seconds
+Run 3 time: 1.08103 seconds
+Run 4 time: 1.05681 seconds
+Run 5 time: 1.06165 seconds
+
+Average time for 30 runs with matrix size 6000 x 6000: 0.178065 seconds
+
+Running tests for matrix size 6500 x 6500...
+Run 1 time: 1.25841 seconds
+Run 2 time: 1.25014 seconds
+Run 3 time: 1.25538 seconds
+Run 4 time: 1.11219 seconds
+Run 5 time: 1.24061 seconds
+
+Average time for 30 runs with matrix size 6500 x 6500: 0.203891 seconds
+
+Running tests for matrix size 7000 x 7000...
+Run 1 time: 1.45611 seconds
+Run 2 time: 1.44775 seconds
+Run 3 time: 1.45476 seconds
+Run 4 time: 1.46473 seconds
+Run 5 time: 1.44245 seconds
+
+Average time for 30 runs with matrix size 7000 x 7000: 0.242193 seconds
+
+Running tests for matrix size 7500 x 7500...
+Run 1 time: 1.63341 seconds
+Run 2 time: 1.5616 seconds
+Run 3 time: 1.6299 seconds
+Run 4 time: 1.67762 seconds
+Run 5 time: 1.6134 seconds
+
+Average time for 30 runs with matrix size 7500 x 7500: 0.270531 seconds
+
+Running tests for matrix size 8000 x 8000...
+Run 1 time: 1.85623 seconds
+Run 2 time: 1.85185 seconds
+Run 3 time: 1.84824 seconds
+Run 4 time: 1.797
