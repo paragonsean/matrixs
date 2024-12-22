@@ -1,0 +1,123 @@
+Select the solver to use:
+1. Gauss-Seidel
+2. Gaussian Elimination
+Enter choice (1/2): Print solution? (1 = yes, 0 = no): 
+Running tests for matrix size 500 x 500...
+
+Running Gauss-Seidel for matrix size 500 x 500 (Run 1)
+
+--- Dense Matrix Test ---
+Dense Matrix Generation Time: 0.074032 seconds.
+Matrix A and vector b successfully loaded from matdatas.txt
+Loading took: 0.0152944 seconds.
+Matrix Load Time: 0.015323 seconds.
+Solver Execution Time: 0.00218492 seconds.
+Total Time for Dense Matrix: 0.0915431 seconds.
+Run 1 time: 0.0915625 seconds
+
+Running Gauss-Seidel for matrix size 500 x 500 (Run 2)
+
+--- Dense Matrix Test ---
+Dense Matrix Generation Time: 0.0474501 seconds.
+Matrix A and vector b successfully loaded from matdatas.txt
+Loading took: 0.0148771 seconds.
+Matrix Load Time: 0.0149095 seconds.
+Solver Execution Time: 0.00248838 seconds.
+Total Time for Dense Matrix: 0.0648522 seconds.
+Run 2 time: 0.0648832 seconds
+
+Running Gauss-Seidel for matrix size 500 x 500 (Run 3)
+
+--- Dense Matrix Test ---
+Dense Matrix Generation Time: 0.0461071 seconds.
+Matrix A and vector b successfully loaded from matdatas.txt
+Loading took: 0.0149808 seconds.
+Matrix Load Time: 0.0150139 seconds.
+Solver Execution Time: 0.00248142 seconds.
+Total Time for Dense Matrix: 0.0636049 seconds.
+Run 3 time: 0.0636244 seconds
+
+Running Gauss-Seidel for matrix size 500 x 500 (Run 4)
+
+--- Dense Matrix Test ---
+Dense Matrix Generation Time: 0.0458655 seconds.
+Matrix A and vector b successfully loaded from matdatas.txt
+Loading took: 0.0147427 seconds.
+Matrix Load Time: 0.0147751 seconds.
+Solver Execution Time: 0.00218458 seconds.
+Total Time for Dense Matrix: 0.0628305 seconds.
+Run 4 time: 0.0628506 seconds
+
+Running Gauss-Seidel for matrix size 500 x 500 (Run 5)
+
+--- Dense Matrix Test ---
+Dense Matrix Generation Time: 0.0460437 seconds.
+Matrix A and vector b successfully loaded from matdatas.txt
+Loading took: 0.0149761 seconds.
+Matrix Load Time: 0.0150092 seconds.
+Solver Execution Time: 0.00251804 seconds.
+Total Time for Dense Matrix: 0.063576 seconds.
+Run 5 time: 0.0635928 seconds
+
+Average time for 30 runs with matrix size 500 x 500: 0.0115504 seconds
+
+Running tests for matrix size 1000 x 1000...
+
+Running Gauss-Seidel for matrix size 1000 x 1000 (Run 1)
+
+--- Dense Matrix Test ---
+Dense Matrix Generation Time: 0.18585 seconds.
+Matrix A and vector b successfully loaded from matdatas.txt
+Loading took: 0.0519079 seconds.
+Matrix Load Time: 0.0524358 seconds.
+Solver Execution Time: 0.00870258 seconds.
+Total Time for Dense Matrix: 0.246991 seconds.
+Run 1 time: 0.247181 seconds
+
+Running Gauss-Seidel for matrix size 1000 x 1000 (Run 2)
+
+--- Dense Matrix Test ---
+Dense Matrix Generation Time: 0.184443 seconds.
+Matrix A and vector b successfully loaded from matdatas.txt
+Loading took: 0.0525355 seconds.
+Matrix Load Time: 0.0531254 seconds.
+Solver Execution Time: 0.00871608 seconds.
+Total Time for Dense Matrix: 0.246286 seconds.
+Run 2 time: 0.246412 seconds
+
+Running Gauss-Seidel for matrix size 1000 x 1000 (Run 3)
+
+--- Dense Matrix Test ---
+Dense Matrix Generation Time: 0.184917 seconds.
+Matrix A and vector b successfully loaded from matdatas.txt
+Loading took: 0.0536764 seconds.
+Matrix Load Time: 0.054243 seconds.
+Solver Execution Time: 0.00870887 seconds.
+Total Time for Dense Matrix: 0.247872 seconds.
+Run 3 time: 0.247996 seconds
+
+Running Gauss-Seidel for matrix size 1000 x 1000 (Run 4)
+
+--- Dense Matrix Test ---
+Dense Matrix Generation Time: 0.183984 seconds.
+Matrix A and vector b successfully loaded from matdatas.txt
+Loading took: 0.0536005 seconds.
+Matrix Load Time: 0.0541545 seconds.
+Solver Execution Time: 0.00871654 seconds.
+Total Time for Dense Matrix: 0.246857 seconds.
+Run 4 time: 0.246979 seconds
+
+Running Gauss-Seidel for matrix size 1000 x 1000 (Run 5)
+
+--- Dense Matrix Test ---
+Dense Matrix Generation Time: 0.184583 seconds.
+Matrix A and vector b successfully loaded from matdatas.txt
+Loading took: 0.0566125 seconds.
+Matrix Load Time: 0.057172 seconds.
+Solver Execution Time: 0.00871008 seconds.
+Total Time for Dense Matrix: 0.250469 seconds.
+Run 5 time: 0.250592 seconds
+
+Average time for 30 runs with matrix size 1000 x 1000: 0.0413053 seconds
+
+Running tests for matrix size 1500 x 150

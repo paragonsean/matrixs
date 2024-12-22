@@ -1,6 +1,6 @@
 #include "matrix_solver.h"
 #include <fstream>  // For file handling
-#include "testmmapmatrix.h"
+
 int main() {
     const std::string filename = "matdatas.txt";
     bool printSolution = false;
@@ -24,7 +24,7 @@ int main() {
     std::cin >> printSolution;
 
     // Set matrix sizes for the test
-    std::vector<int> matrixSizes = {500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 12000, 13000, 14000, 15000,20000, 25000, 30000, 35000, 40000, 45000, 50000};
+    std::vector<int> matrixSizes = {500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000,20000,30000,40000};
 
     // Loop through each matrix size and perform tests
     for (int matrixSize : matrixSizes) {
@@ -33,7 +33,7 @@ int main() {
         std::cout << "\nRunning tests for matrix size " << matrixSize << " x " << matrixSize << "...\n";
 
         // Run 30 iterations for each matrix size
-        for (int i = 0; i < 10; ++i) {
+        for (int i = 0; i < 5; ++i) {
             auto start = std::chrono::high_resolution_clock::now();
 
             if (solverChoice == 1) {
