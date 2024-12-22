@@ -4,7 +4,7 @@ CXXFLAGS = -std=c++17 -Wall -Wextra -I../include -I. -fmessage-length=0 -Wno-sig
 LDFLAGS = -lpthread
 
 # Target executable
-TARGET = main
+TARGET = matrix_solver
 
 # Object files
 OBJS = main.o iterative_solvers.o

@@ -17,6 +17,7 @@
 #include "../include/dense_matrix_storage.h"
 #include "../include/sparse_matrix_storage.h"
 
+namespace pnmatrix {
 class MatrixGenerator {
 public:
     template <typename MatrixType>
@@ -46,24 +47,7 @@ public:
     double calculate2NormError(const MatrixType& A, const MatrixType& x, const MatrixType& b);  
 };
 
-template <typename MatrixType>
-double MatrixGenerator::calculate2NormError(const MatrixType& A, const MatrixType& x, const MatrixType& b) {
-    MatrixType b2 = A * x;  // Compute A * x
-    double sumSquares = 0.0;
 
-    for (size_t i = 0; i < b.get_row(); ++i) {
-        for (size_t j = 0; j < b.get_column(); ++j) {
-            double error = b2.get_value(i, j) - b.get_value(i, j);
-            sumSquares += error * error;
-        }
-    }
-
-    double norm2 = std::sqrt(sumSquares);
-    int N = static_cast<int>(b.get_row() * b.get_column());
-    double errorNorm = norm2 / N;
-
-    return errorNorm;
-}
 
 // Modified function to handle matrix output (added the writeMatrixToFile function)
 template <typename MatrixType>
@@ -337,5 +321,5 @@ void MatrixGenerator::loadDefaultAB(MatrixType& A, MatrixType& b, const std::str
     std::cout << "Matrix A and vector b successfully loaded from " << filename << "\n";
     std::cout << "Loading took: " << std::chrono::duration<double>(end - start).count() << " seconds.\n";
 }
-
+}
 #endif // MATRIX_GENERATOR_H

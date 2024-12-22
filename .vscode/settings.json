@@ -60,6 +60,12 @@
         "memory": "cpp",
         "ostream": "cpp",
         "sstream": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "list": "cpp",
+        "unordered_set": "cpp",
+        "charconv": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp",
+        "future": "cpp"
     }
 }
