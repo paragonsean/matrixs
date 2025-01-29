@@ -1,4 +1,4 @@
-# pnmatrix
+# seanspnmatrix
 a library for solving linear equations based on c++11.
 
 support:
