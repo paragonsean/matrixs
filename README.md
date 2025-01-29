@@ -1,5 +1,5 @@
 # seanspnmatrix
-a library for solving linear equations based on c++11.
+a library for solving linear equations based on c++17.
 
 support:
 
